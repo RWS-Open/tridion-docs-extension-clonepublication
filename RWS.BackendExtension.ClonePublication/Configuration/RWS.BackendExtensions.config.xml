@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<backendextensions>
+  <CatalogPath>C:\tridion\Docs\InfoShare\Web\Author\ASP\DocTypes\catalog.xml</CatalogPath>
+  <PublicationConfigPath>C:\tridion\Docs\InfoShare\Web\Author\ASP\Custom\ReviewInbox\config\PublicationConfig.xml</PublicationConfigPath>
+  <TopicTemplatePath>C:\tridion\Docs\InfoShare\Web\Author\ASP\TopicTemplates\TopicTemplate.xml</TopicTemplatePath>
+  <DitaTopicTemplatePath>C:\tridion\Docs\InfoShare\Web\Author\ASP\TopicTemplates\DitaTopicTemplate.xml</DitaTopicTemplatePath>
+	<DocTypesFilePath>C:\tridion\Docs\InfoShare\Web\Author\ASP\TopicTemplates\DocTypes.json</DocTypesFilePath>
+  <DefaultLanguage>en-US</DefaultLanguage>
+  <DitamapMetadata>
+    <ishfields>
+      <ishfield name="FTITLE" level="logical" />
+      <ishfield name="FMASTERTYPE" level="logical" /> 
+      <ishfield name="DOC-LANGUAGE" level="lng" />
+    </ishfields>
+  </DitamapMetadata> 
+</backendextensions>

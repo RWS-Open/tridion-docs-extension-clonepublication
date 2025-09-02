@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ReferenceDlls\**" />
+    <Compile Remove="ReferenceDlls_old\**" />
+    <EmbeddedResource Remove="ReferenceDlls\**" />
+    <EmbeddedResource Remove="ReferenceDlls_old\**" />
+    <None Remove="ReferenceDlls\**" />
+    <None Remove="ReferenceDlls_old\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectCapability Include="AspNetCore" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Trisoft.InfoShare.API.Enumerations">
+      <HintPath>..\refdll_15.1\Trisoft.InfoShare.API.Enumerations.dll</HintPath>
+    </Reference>
+    <Reference Include="Trisoft.InfoShare.API.Interfaces">
+      <HintPath>..\refdll_15.1\Trisoft.InfoShare.API.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Trisoft.InfoShare.API25">
+      <HintPath>..\refdll_15.1\Trisoft.InfoShare.API25.dll</HintPath>
+    </Reference>
+    <Reference Include="Trisoft.InfoShare.Common">
+      <HintPath>..\refdll_15.1\Trisoft.InfoShare.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Trisoft.InfoShare.Core">
+      <HintPath>..\refdll_15.1\Trisoft.InfoShare.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Trisoft.InfoShare.Plugins.SDK">
+      <HintPath>..\refdll_15.1\Trisoft.InfoShare.Plugins.SDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Trisoft.Utilities.Common.Exceptions">
+      <HintPath>..\refdll_15.1\Trisoft.Utilities.Common.Exceptions.dll</HintPath>
+    </Reference>
+    <Reference Include="Trisoft.Utilities.Logging">
+      <HintPath>..\refdll_15.1\Trisoft.Utilities.Logging.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="&quot;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -file &quot;..\RWS.BackendExtension.ClonePublication\ClonePublication_prepare_package.ps1&quot;" />
+  </Target>
+
+</Project>
