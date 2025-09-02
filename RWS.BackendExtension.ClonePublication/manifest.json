@@ -1,0 +1,18 @@
+{
+    "id": "RWS.BackendExtensions.ClonePublication",
+    "name": "RWS.BackendExtensions.ClonePublication",
+    "author": "RWS",
+    "description": "RWS.BackendExtensions.ClonePublication",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "RWS.BackendExtensions.ClonePublication",
+            "type": "OrganizeSpaceExtension",
+            "properties": { 
+                "assemblyFileSource": "bin\\extension\\RWS.BackendExtension.ClonePublication.dll"
+            }
+        }
+    ]
+}

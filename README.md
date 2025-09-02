@@ -91,10 +91,10 @@ The **RWS Tridion Docs Clone Publication Extension** is a Tridion Docs extension
 
 ### Usage
 
-1) Login to Tridion Docs Organize Space 
-2) Create a new folder for publication to clone
-3) Navigate to the publication and select a single publication that needs to be cloned and click on clone publication button
-4) On clicking of clone publication, you will get a pop up to select the target folder
-5) Select the target folder and click clone publication button
-6) After clone publication is done success message will be shown
-7) Refresh the target publication folder to the see the cloned publication
+1) Login to Tridion Docs Organize Space.
+2) Create a new folder in Structured Content tree view for publication to clone.
+3) Navigate to the publication and select a single publication that needs to be cloned and click on clone publication button.
+4) On clicking of clone publication, you will get a pop up to select the target folder.
+5) Select the target folder and click clone publication button.
+6) After clone publication is done success notification message will be shown.
+7) Refresh the target publication folder to the see the cloned publication.
