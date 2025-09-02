@@ -1,0 +1,23 @@
+{
+    "id": "clone-publication",
+    "name": "Clone Publication",
+    "author": "RWS",
+    "description": "Addon to clone the publication",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "yes",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "clone-publication-extension",
+            "type": "OrganizeSpaceExtension",
+            "properties": {
+                "main": "dist\\clone-publication-extension\\main.js",
+                "files": [
+                    "dist\\clone-publication-extension\\main.js",
+                    "dist\\clone-publication-extension\\main.css"
+                ],
+                "assemblyFileSource": ""
+            }
+        }
+    ]
+}
