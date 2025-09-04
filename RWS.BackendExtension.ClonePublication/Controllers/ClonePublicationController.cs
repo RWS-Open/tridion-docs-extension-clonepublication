@@ -67,8 +67,7 @@ namespace RWS.BackendExtension.ClonePublication.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public IActionResult CopyPublication(Publication publication)
         {
-          //   System.Diagnostics.Debugger.Launch();
-          //  System.Diagnostics.Debugger.Break();
+          
             List<string> pubIds = new List<string>();
             _logger.LogInformation($"Copy Publication:'{publication._publicationId}'");
             string newPublicationGUID = string.Empty;
@@ -406,9 +405,7 @@ namespace RWS.BackendExtension.ClonePublication.Controllers
 
 
         private string CheckAndCreateFolder(string destFolder, string folderType)
-        {
-            
-            //  System.Diagnostics.Debugger.Launch();
+        { 
             string _folderId = string.Empty;
             try
             {
