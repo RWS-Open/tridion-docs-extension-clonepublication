@@ -10,91 +10,52 @@ The **RWS Tridion Docs Clone Publication Extension** is a Tridion Docs extension
 - Seamless integration with [RWS](https://www.rws.com) Tridion Docs.
 - Easy to deploy and maintain.
 
+## Requirements
+
+- Access to an **[RWS](https://www.rws.com) Tridion Docs 15.1 environment** 
+
 ## Backend Extension
-
-
-### Requirements
-
-- **Visual Studio 2022**
-- **.NET 8.0 Framework**
-- Access to **[RWS](https://www.rws.com) Tridion Docs environment 15.1** 
-
-
-### Build Instructions
-
-1. Open the solution in **Visual Studio 2022**.
-2. Build the project targeting **.NET 8.0**.
 
 ### Deployment
 
-1. Locate the packaged extension:  
-	RWS.BackendExtension.ClonePublication\package\RWS.BackendExtension.ClonePublication.zip
+1. Download the backend extension ZIP file(RWS.BackendExtension.ClonePublication-1.0.0.zip) from [releases](https://github.com/RWS-Open/tridion-docs-extension-clonepublication/releases) page.
 	
-2. Copy the zip file to the Tridion Docs Add-ons repository:  
+2. Copy the downloaded ZIP file to the Tridion Docs Add-ons repository directory(Tridion Docs Installation path):  
+   
+   Directory path:
+
 	\Docs\InfoShare\Data\Addons\Repository\
    
 
 ## Frontend Extension
 
+### Deployment
 
-### Requirements
-
-- **Nodejs Latest**
-
-
-### Installation
-
- - Navigate to clone-publication-extension folder
- - Install Node Modules by running the following command
-   - npm install
-  
-
-### ⚙️ Configure
-
- - Update the package.json file to update the Target server url as below
-     - target = https://domain.com (Tridion Docs Organize Space url)
-
-  ```json
-
-     "dev": "webpack serve --config ./webpack.dev.config.js --progress --env target=https://domain.com manifest=../manifest.json config=../clone-publication.config",
-
-  ```
-
- - Login to Access Management 
-   - Applications Tab
-   - Click on Edit button to enter the Allowed redirect URLs as below
-       - https://localhost:3010/.../signin-oidc
-       - https://localhost:3010/.../signout-callback-oidc
-   - Click Save
-
-
-### Run Locally
-
-1) Navigate to clone-publication-extension folder
-2) Run the command npm run dev to run the extension locally
-   - npm run dev
-3) Extension can be accessed using the below URL
-    https://localhost:3010/ISHCS/OrganizeSpace
-    
-
-### Build & Deploy
-
-1) Navigate to clone-publication-extension folder
-2) Run the command npm run build to build the packege
-    - npm run build    
-3) Run the command npm run pack to create deployable zip for the extension 
-    - npm run pack
-4)  Copy the zip file and config file to the Tridion Docs Add-ons repository:  
+1. Download the frontend extension ZIP file(clone-publication-1.0.0-frontend.zip) from the [releases](https://github.com/RWS-Open/tridion-docs-extension-clonepublication/releases) page.
+   
+2. Unzip the clone-publication-1.0.0-frontend.zip file.
+   
+3. Copy the following files to the Tridion Docs Add-ons repository:  
+   
         - clone-publication.zip
         - clone-publication.config
+  
+    Directory path:
+
 	\Docs\InfoShare\Data\Addons\Repository\
 
 ### Usage
 
-1) Login to Tridion Docs Organize Space.
-2) Create a new folder in Structured Content tree view for publication to clone.
-3) Navigate to the publication and select a single publication that needs to be cloned and click on clone publication button.
-4) On clicking of clone publication, you will get a pop up to select the target folder.
-5) Select the target folder and click clone publication button.
-6) After clone publication is done success notification message will be shown.
-7) Refresh the target publication folder to the see the cloned publication.
+1. Login to Tridion Docs **Organize** Space.
+   
+2. Create a new folder in the **Structured Content** tree view and set content type as **Publication** where the cloned publication should be created.
+   
+3. Navigate to the publication you want to clone, select it, and click the **Clone Publication** button.
+   
+4. A modal window will appear prompting you to select the target folder.
+   
+5. Choose the target folder and click **Clone Publication.**
+   
+6. Upon successful cloning, a success notification message will appear.
+   
+7. Refresh the target folder to view the newly cloned publication.
