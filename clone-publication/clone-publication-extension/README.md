@@ -1,95 +1,91 @@
-# Getting Started
+# RWS Tridion Docs Clone Publication Extension
 
-This project was created with Tridion Docs Extensions CLI
+## Frontend extension
 
-## Available Scripts
+### Requirements
 
-In the project directory, you can run:
-
-### dev
-
-`npm run dev` or `yarn run dev`
-
-Runs the app in the development mode.
-Open [http://localhost:3010](http://localhost:3010) to view it in your browser.
+- Access to **[RWS](https://www.rws.com) Tridion Docs 15.1 environment** 
+- Backend Extension **[releases](https://github.com/mshiva452/tridion-docs-extension-clonepublication?tab=readme-ov-file#backend-extension)**
+- **Node.js (Latest LTS version recommended)**
 
 
-### build
-`npm run build` or  `yarn run build`
+### Installation
 
-Builds the extension for production to the `dist` folder.
+1. Navigate to the clone-publication-extension folder.
+2. Install the required dependencies:
+   
+   npm install
+  
+
+### ⚙️ Configuration
+
+1. Open the package.json file.
+2. Update the target server URL in the dev script to point to your Tridion Docs Organize Space:
+
+  ```json
+
+     "dev": "webpack serve --config ./webpack.dev.config.js --progress --env target=https://domain.com manifest=../manifest.json config=../clone-publication.config",
+
+  ```
+
+3. Login to **Access Management** and configure redirect URLs:
+   - Go to the **Applications** tab.
+   - Go to Tridion Docs Organize Space details
+   - Click Edit on your application.
+   - Add the following under "Allowed Redirect URLs":
+        
+        https://localhost:3010/ISHCS/OrganizeSpace/signin-oidc
+
+        https://localhost:3010/ISHCS/OrganizeSpace/signout-callback-oidc
+
+   - Click Save
 
 
-### pack
-`npm run pack` or  `yarn run pack`
+### Run Locally
 
-Packs an extension and prepares it for deployment
+1. Navigate to clone-publication-extension folder
+   
+2. Start the local development server:
+  
+    npm run dev
 
-### lint
-`npm run lint` or  `yarn run lint`
+3. Access the extension at:
+   
+    https://localhost:3010/ISHCS/OrganizeSpace
+    
 
-Run [eslint](https://eslint.org/) and [prettier](https://prettier.io/) on `src` folder
+### Build & Deployment
 
-## example of usage css file
+     
+1. Navigate to clone-publication-extension folder
+   
+2. Build the extension:
+   
+    npm run build
 
-As the starting point of using css variables we need to include them in to the build. For example we can add import into `src/index.ts`
-```typescript
-...
-import './../theme/_variables.css';
-...
+3. Package the extension:
+ 
+    npm run pack
 
-```
+4. Copy the following files to the Tridion Docs Add-ons repository directory(\Docs\InfoShare\Data\Addons\Repository):
+   
+        clone-publication.zip
 
-That import will give you access to all variables defined in css file and you can use it with `var` css function. More details can be found [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+        clone-publication.config
+	
 
-```css
-.come-class-name {
-    padding: 60px;
-    background: var(--color-blue50);
-}
+### Usage
 
-```
-
-## example of usage ts files
-
-`colorPalette.ts` and `spacingUnits.ts` can be used for [styled components](https://styled-components.com/)
-
-```typescript
-import styled from 'styled-components';
-import spacing from '../spacingUnits.ts';
-
-const Container = styled.div`
-    padding: ${spacing.sm}px;
-`;
-
-```
-
-## Project structure
-
-```
-.
-├── dist // Result of the build command will be put here
-├── my-extension // Extensions folder
-│   ├── certificate // Generated certificates for the local https server
-│   ├── src // main source code folder where hooks and components should be located
-|   |   ....
-│   │   ├── globals.ts
-│   │   └── index.tsx // main entry point of the app
-│   ├── types // Global styles folder
-│   │   └── css.d.ts
-│   ├── theme // colors and spacing examples
-│   ├── .browserslistrc
-│   ├── .editorconfig
-│   ├── .eslintrc.json
-│   ├── .gitignore
-│   ├── .prettierrc
-│   ├── babel.config.js
-│   ├── devServer.js // local dev server configuration
-│   ├── package.json
-│   ├── tsconfig.json
-│   ├── webpack.dev.config.js
-│   └── webpack.prod.config.js
-├── manifest.json
-└── my-addon.config
-
-```
+1. Login to Tridion Docs **Organize** Space.
+   
+2. Create a new folder in the **Structured Content** tree view and set content type as **Publication** where the cloned publication should be created.
+   
+3. Navigate to the publication you want to clone, select it, and click the **Clone Publication** button.
+   
+4. A modal window will appear prompting you to select the target folder.
+   
+5. Choose the target folder and click **Clone Publication.**
+   
+6. Upon successful cloning, a success notification message will appear.
+   
+7. Refresh the target folder to view the newly cloned publication.
